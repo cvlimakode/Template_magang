@@ -10,6 +10,10 @@ class Crud extends CI_Controller{
 
 	function index(){
 		$data['user'] = $this->m_data->tampil_data()->result();
-		$this->load->views('v_tampil',$data);
+		
+		
+		
+		$this->load->view('v_admin',$data);
+		
 	}
 }

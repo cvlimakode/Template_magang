@@ -13,22 +13,23 @@
 			<th>Alamat</th>
 			<th>Pekerjaan</th>
 			<th>Action</th>
+			<th>Password</th>
+			<th>Level</th>
 		</tr>
 		<?php 
 		$no = 1;
-		foreach($user as $u){ 
-		?>
+		foreach($user as $u):?>
+		{
 		<tr>
-			<td><?php echo $no++ ?></td>
-			<td><?php echo $u->nama ?></td>
-			<td><?php echo $u->alamat ?></td>
-			<td><?php echo $u->pekerjaan ?></td>
-			<td>
-			      <?php echo anchor('crud/edit/'.$u->id,'Edit'); ?>
-                              <?php echo anchor('crud/hapus/'.$u->id,'Hapus'); ?>
-			</td>
+			<td><?php echo $u->username ?></td>
+			<td><?php echo $u->name ?></td>
+			<td><?php echo $u->email ?></td>
+			<td><?php echo $u->phone ?></td>
+			<td><?php echo $u->password ?></td>
+			<td><?php echo $u->level ?></td>
 		</tr>
-		<?php } ?>
+		<?php endforeach;?> 
+	}
 	</table>
 </body>
 </html>
