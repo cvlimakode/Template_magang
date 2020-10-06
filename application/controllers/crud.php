@@ -29,6 +29,7 @@ class Crud extends CI_Controller{
 
         $this->load->view("v_tambah");
 	}
+
 	function tambah_aksi(){
 		$username = $this->input->post('username');
 		$name = $this->input->post('name');
@@ -47,6 +48,12 @@ class Crud extends CI_Controller{
 
 			);
 		$this->m_data->input_data($data,'administrator');
+		redirect('crud/index');
+	}
+
+	function hapus($username){
+		$where = array('username' => $username);
+		$this->m_data->hapus_data($where,'administrator');
 		redirect('crud/index');
 	}
 }
