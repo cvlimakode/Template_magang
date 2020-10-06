@@ -11,28 +11,47 @@ class Login extends CI_Controller{
 	}
 
 	function aksi_login(){
-        $username = $this->input->post('username');
-       
+		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-		$where = array(
-			'username' => $username,
-			'password' => password_verify($password,PASSWORD_DEFAULT)
-			);
-		$cek = $this->m_login->cek_login("administrator",$where)->num_rows();
-		if($cek > 0){
-
-			$data_session = array(
-				'nama' => $username,
-				'status' => "login"
-				);
-			$this->session->set_userdata($data_session);
-   
-			redirect("admin/index");
-
-		}else{
-			echo "Username dan password salah !";
+		$user = $this->m_login->cek_login('administrator', ['username' => $username])->row_array();
+        if ($user) {
+            if (password_verify($password, $user['password'])) {
+                $data_session = [
+                    'username' => $user['username'],
+                    'status' => 'login'
+                ];
+                $this->session->set_userdata($data_session);
+                redirect('admin/index');
+            } else {
+			echo "password salah";
+			} 
+		}else {
+			echo "username dan password salah";
 		}
 	}
+    //     $username = $this->input->post('username');
+       
+	// 	$password = $this->input->post('password');
+	// 	$where = array(
+	// 		'username' => $username,
+	// 		'password' => password_verify($password, $hash)
+	// 		);
+	// 	$cek = $this->m_login->cek_login("administrator",$where)->num_rows();
+	// 	if($cek > 0){
+
+	// 		$data_session = array(
+	// 			'nama' => $username,
+	// 			'status' => "login"
+	// 			);
+	// 		$this->session->set_userdata($data_session);
+   
+	// 		redirect("admin/index");
+
+	// 	}else{
+	// 		echo "Username dan password salah !";
+	// 	}
+	// }
+	
 
 	function logout(){
 		$this->session->sess_destroy();

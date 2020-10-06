@@ -30,7 +30,7 @@ class Register extends CI_Controller {
             $email = $this->input->post('email');
             $phone = $this->input->post('phone');
             $level = $this->input->post('level');
-			$this->auth->register($username,$password,$name,$email,$phone,$level);
+			$this->auth->register($username,$name,$email,$phone,$password,$level);
 			$this->session->set_flashdata('success_register','Proses Pendaftaran User Berhasil');
 			redirect('login');
 		}
