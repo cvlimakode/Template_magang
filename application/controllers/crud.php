@@ -56,4 +56,35 @@ class Crud extends CI_Controller{
 		$this->m_data->hapus_data($where,'administrator');
 		redirect('crud/index');
 	}
+
+	function edit($username){
+		$where = array('username' => $username);
+		$data['user'] = $this->m_data->edit_data($where,'administrator')->result();
+		$this->load->view('v_edit',$data);
+	}
+
+	function update(){
+		$username = $this->input->post('username');
+		$name = $this->input->post('name');
+		$email = $this->input->post('email');
+		$phone = $this->input->post('phone');
+		$password = $this->input->post('password');
+		$level = $this->input->post('level');
+	 
+		$data = array(
+			'username' => $username,
+			'name' => $name,
+			'email' => $email,
+			'phone' => $phone,
+			'password' => $password,
+			'level' => $level
+		);
+	 
+		$where = array(
+			'username' => $username
+		);
+	 
+		$this->m_data->update_data($where,$data,'administrator');
+		redirect('crud/index');
+	}
 }
