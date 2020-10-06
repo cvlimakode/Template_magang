@@ -17,9 +17,9 @@
                 <div class="table-responsive">
                   <table class="table">
                     <thead class=" text-primary">
-                      <th>
+                      <!-- <th>
                         No
-                      </th>
+                      </th> -->
                       <th>
                         Username
                       </th>
