@@ -11,31 +11,9 @@
         <title>Login</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
-</head>
-<!-- <body> 
-	<h1>Membuat Login CI</h1>
-	<form action="<?php echo base_url('Login/aksi_login'); ?>" method="post">		
-		<table>
-			<tr>
-				<td>Username</td>
-				<td><input type="text" name="username"></td>
-			</tr>
-			<tr>
-				<td>Password</td>
-				<td><input type="password" name="password"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><input type="submit" value="Login"></td>
-			</tr>
-		</table>
-	</form>
-</body>
-<?php $this->load->view('partials/footer'); ?>
-</html> -->
+
 
 <body class="bg-primary">
-<form action="<?php echo base_url('Login/aksi_login'); ?>" method="post">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -45,7 +23,7 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
-                                        <form>
+                                    <form action="<?php echo base_url();?>login/aksi_login" method="post">
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputEmailAddress">Username</label>
                                                 <input class="form-control py-4" name="username" type="text" placeholder="Enter Username" />
@@ -62,7 +40,7 @@
                                             </div>
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="password.html">Forgot Password?</a>
-                                                <a class="btn btn-primary" href="">Login</a>
+                                                <button id="btnlogin" class="btn btn-primary">Login</a>
                                             </div>
                                         </form>
                                     </div>
@@ -80,6 +58,7 @@
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Your Website 2020</div>
+                            <?php $this->load->view('partials/footer'); ?>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;
