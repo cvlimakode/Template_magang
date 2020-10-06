@@ -35,7 +35,7 @@ class Crud extends CI_Controller{
 		$name = $this->input->post('name');
 		$email = $this->input->post('email');
 		$phone = $this->input->post('phone');
-		$password = $this->input->post('password');
+		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 		$level = $this->input->post('level');
  
 		$data = array(

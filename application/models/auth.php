@@ -14,7 +14,7 @@ class Auth extends CI_Model
             'email'=>$email,
             'name'=>$name,
             'phone'=>$phone,
-			'password'=>password_hash($password, true),
+			'password'=>password_hash($password, PASSWORD_DEFAULT),
 			'level'=>$level
 		);
 		$this->db->insert('administrator',$data_user);
