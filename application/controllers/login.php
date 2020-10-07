@@ -39,9 +39,5 @@ class Login extends CI_Controller{
             echo "Akun Belum Terdaftar";
         }
     }
-    
-	function logout(){
-		$this->session->sess_destroy();
-		redirect(base_url('login'));
-	}
+
 }
