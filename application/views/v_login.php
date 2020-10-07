@@ -36,6 +36,13 @@
 						<label for="password">Password</label>
 						<input type="password" class="form-control" name="password" id="password" placeholder="Password">
 					</div>
+					<div class="form-group">
+						<label for="nama">Select Level</label>
+						<select name="level" > 
+                            <option value="admin">Admin</option>
+                            <option value="superadmin">Superadmin</option>
+                        </select>
+                    </div>
                     <button type="submit" id="btnlogin" class="btn btn-primary">Login</button>
                     <a href="<?php echo base_url('register');?>">Need an account? Sign up!</a></div>
                     <!-- <button type="submit" class="btn btn-primary">Register</button> -->

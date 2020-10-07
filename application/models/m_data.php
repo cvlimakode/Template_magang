@@ -10,34 +10,6 @@ class M_data extends CI_Model{
 	public $password;
 	public $level;
 
-    // public function rules()
-    // {
-    //     return [
-    //         ['field' => 'username',
-    //         'label' => 'Username',
-	// 		'rules' => 'required'],
-			
-	// 		['field' => 'name',
-    //         'label' => 'Name',
-	// 		'rules' => 'required'],
-			
-	// 		['field' => 'email',
-    //         'label' => 'Email',
-	// 		'rules' => 'required'],
-			
-	// 		['field' => 'phone',
-    //         'label' => 'Phone',
-    //         'rules' => 'numeric'],
-
-    //         ['field' => 'password',
-    //         'label' => 'Password',
-    //         'rules' => 'required'],
-            
-    //         ['field' => 'level',
-    //         'label' => 'Level',
-    //         'rules' => 'required']
-    //     ];
-    // }
 	function tampil_data(){
         return $this->db->get('administrator');
 	}

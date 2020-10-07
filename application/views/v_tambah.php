@@ -35,32 +35,33 @@
 								
 
 
-                            <div class="form-group">
+              <div class="form-group">
 								<label for="email">Email*</label>
 								<input class="form-control"
 								 type="text" name="email" min="0" placeholder="Email" />
 								
 							</div>
 
-                            <div class="form-group">
+              <div class="form-group">
 								<label for="phone">Phone*</label>
 								<input class="form-control"
 								 type="number" name="phone" min="0" placeholder="Phone" />
 								
 							</div>
 
-                            <div class="form-group">
+              <div class="form-group">
 								<label for="password">Password*</label>
 								<input class="form-control"
 								 type="text" name="password" min="0" placeholder="Password" />
 								
 							</div>
 
-                            <div class="form-group">
+              <div class="form-group">
 								<label for="level">Level*</label>
-								<input class="form-control"
-								 type="text" name="level" min="0" placeholder="Level" />
-								
+								<select name="Level" > 
+									<option value="admin">Admin</option>
+									<option value="superadmin">Superadmin</option>
+								</select>
 							</div>
 							<input class="btn btn-success" type="submit" name="btn" value="Tambah" />
 						</form>

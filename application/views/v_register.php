@@ -41,7 +41,10 @@
                     </div>
                     <div class="form-group">
 						<label for="nama">Select Level</label>
-						<input type="text" class="form-control" name="level" id="level" placeholder="level">
+						<select name="level" > 
+                            <option value="admin">Admin</option>
+                            <option value="superadmin">Superadmin</option>
+                        </select>
                     </div>
 					<button type="submit" class="btn btn-primary">Register</button>
 				</form>

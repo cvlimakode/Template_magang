@@ -10,6 +10,9 @@
               <div class="card-header">
                 <h4 class="card-title"> Simple Table</h4>
               </div>
+              <div class="col-md-12">
+              <?php echo anchor('crud/tambah/','Tambah'); ?>
+              </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
@@ -46,6 +49,10 @@
                        <td><?php echo $u->phone ?></td>
                        <td><?php echo $u->password ?></td>
                        <td><?php echo $u->level ?></td>
+                       <td>
+			                <?php echo anchor('crud/edit/'.$u->username,'Edit'); ?>
+                      <?php echo anchor('crud/hapus/'.$u->username,'Hapus'); ?>
+		                	</td>
                      </tr>
                     <?php endforeach;?>
                     </tbody>
